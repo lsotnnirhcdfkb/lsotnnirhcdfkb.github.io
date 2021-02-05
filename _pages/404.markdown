@@ -1,0 +1,6 @@
+---
+permalink: /404.html
+layout: default
+---
+
+Error [E404]: page not found

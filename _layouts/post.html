@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<article>
+    <header>
+        <div>
+            {% if page.previous %}
+                <a href="{{page.previous.url}}" class="post-prev-link">&lt;&lt;&lt; prev post [{{page.previous.title}}]</a>
+            {% else %}
+                <p class="post-prev-link">&lt; &lt; (first post)</p>
+            {% endif %}
+        </div>
+        <div>
+            {% if page.next %}
+                <a href="{{page.next.url}}" class="post-next-link">&gt;&gt;&gt; next post [{{page.next.title}}]</a>
+            {% else %}
+                <p class="post-next-link">&gt; &gt; (latest post)</p>
+            {% endif %}
+        </div>
+        <hr>
+        <h1 class="post-title">{{ page.title }}</h1>
+        <hr>
+        <div class="post-date"><strong>Date:</strong> {{ page.date | date: "%a %d %b %Y" }}</div>
+        <div class="post-categories"><strong>Tags:</strong>
+            -
+            {% for category  in page.categories %}
+            {{ category }}
+            -
+            {% endfor %}
+        </div>
+    </header>
+    <hr>
+    {{ content }}
+</article>
