@@ -9,3 +9,24 @@ body {
     margin-top: 0;
     margin-bottom: 0;
 }
+
+.top-nav {
+    text-align: center;
+}
+
+.centered-things {
+    width: 75%;
+    margin: auto;
+}
+
+.post-links {
+    width: 25%;
+    float: right;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.post-contents {
+    width: 75%;
+    float: left;
+}

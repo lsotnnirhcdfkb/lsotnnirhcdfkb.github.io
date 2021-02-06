@@ -3,33 +3,36 @@ layout: default
 ---
 
 <article>
-    <header>
+    <div class="post-links">
         <div>
             {% if page.previous %}
-                <a href="{{page.previous.url}}" class="post-prev-link">&lt;&lt;&lt; prev post [{{page.previous.title}}]</a>
+            <a href="{{page.previous.url}}" class="post-prev-link">&lt;&lt; prev post [{{page.previous.title}}]</a>
             {% else %}
-                <p class="post-prev-link">&lt; &lt; (first post)</p>
+            <p class="post-prev-link">&lt;&lt; (first post)</p>
             {% endif %}
         </div>
         <div>
             {% if page.next %}
-                <a href="{{page.next.url}}" class="post-next-link">&gt;&gt;&gt; next post [{{page.next.title}}]</a>
+            <a href="{{page.next.url}}" class="post-next-link">&gt;&gt; next post [{{page.next.title}}]</a>
             {% else %}
-                <p class="post-next-link">&gt; &gt; (latest post)</p>
+            <p class="post-next-link">&gt;&gt; (latest post)</p>
             {% endif %}
         </div>
+    </div>
+
+    <div class="post-contents">
+        <header>
+            <h1 class="post-title">{{ page.title }}</h1>
+            <hr>
+            <div class="post-date"><strong>Time:</strong> {{ page.date | date: "%a %d %b %Y %k:%M:%S %z" }}</div>
+            <div class="post-categories"><strong>Categories:</strong>
+                -
+                {% for category  in page.categories %}
+                {{ category }} -
+                {% endfor %}
+            </div>
+        </header>
         <hr>
-        <h1 class="post-title">{{ page.title }}</h1>
-        <hr>
-        <div class="post-date"><strong>Date:</strong> {{ page.date | date: "%a %d %b %Y" }}</div>
-        <div class="post-categories"><strong>Tags:</strong>
-            -
-            {% for category  in page.categories %}
-            {{ category }}
-            -
-            {% endfor %}
-        </div>
-    </header>
-    <hr>
-    {{ content }}
+        {{ content }}
+    </div>
 </article>

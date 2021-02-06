@@ -7,12 +7,14 @@
     <link rel="stylesheet" type="text/css" href="/assets/styles/main.css">
 </head>
 <body>
-    <main class="page-content">
-        {{ content }}
-    </main>
-    <hr>
-    <nav>
-        [<a href="/" {% if page.title == "Home" %}class="active-page"{% endif %}>Home</a>]
-    </nav>
+    <div class="centered-things">
+        <div class="top-nav">
+            [<a href="/" {% if page.title == "Home" %}class="active-page"{% endif %}>Home</a>]
+        </div>
+
+        <main class="page-content">
+            {{ content }}
+        </main>
+    </div>
 </body>
 </html>
