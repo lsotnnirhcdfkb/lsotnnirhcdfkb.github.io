@@ -15,4 +15,4 @@ permalink: /
 ---
 
 ## About
-I write things on this blog
+I write things on this blog while doing random codey things and being bad at writing.
