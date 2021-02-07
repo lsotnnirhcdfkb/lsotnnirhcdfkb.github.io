@@ -24,7 +24,7 @@ layout: default
         <header>
             <h1 class="post-title">{{ page.title }}</h1>
             <hr>
-            <div class="post-date"><strong>Time:</strong> {{ page.date | date: "%a %d %b %Y %k:%M:%S %z" }}</div>
+            <div class="post-date"><strong>Time:</strong> {{ page.date | date: "%a %d %b %Y" }}</div>
             <div class="post-categories"><strong>Categories:</strong>
                 -
                 {% for category  in page.categories %}

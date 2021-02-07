@@ -1,6 +1,5 @@
 ---
 title: Hello!
-date: 20:35:27 -0500
 ---
 
 Hello there,
