@@ -33,12 +33,11 @@ plugins:
 defaults:
   -
     scope:
-      type: posts
-      path: _posts
+      type: notposts
+      path: _notposts
     values:
       is_post: true
       layout: post
-      permalink: /posts/:title
   -
     scope:
       type: pages
@@ -46,6 +45,10 @@ defaults:
     values:
       is_post: false
       layout: default
+
+collections:
+  notposts:
+    output: true
 
 sass:
   style: compressed

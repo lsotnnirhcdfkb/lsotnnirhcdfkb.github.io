@@ -5,32 +5,30 @@ layout: default
 <article>
     <div class="post-links">
         <div>
+            [<a href="/" {% if page.title == "Home" %}class="active-page"{% endif %}>Home</a>]
+        </div>
+
+        <div>
             {% if page.previous %}
-            <a href="{{page.previous.url}}" class="post-prev-link">&lt;&lt; prev post [{{page.previous.title}}]</a>
+            [<a href="{{page.previous.url}}" class="post-prev-link">prev post ({{page.previous.title}})</a>]
             {% else %}
-            <p class="post-prev-link">&lt;&lt; (first post)</p>
+            <p class="post-prev-link">[prev post (none)]</p>
             {% endif %}
         </div>
+
         <div>
             {% if page.next %}
-            <a href="{{page.next.url}}" class="post-next-link">&gt;&gt; next post [{{page.next.title}}]</a>
+            [<a href="{{page.next.url}}" class="post-next-link">next post ({{page.next.title}})</a>]
             {% else %}
-            <p class="post-next-link">&gt;&gt; (latest post)</p>
+            <p class="post-next-link">[next post (none)]</p>
             {% endif %}
         </div>
     </div>
 
     <div class="post-contents">
         <header>
+            <div class="post-date">{{ page.date | date: "%a %d %b %Y %H:%M:%S %z" }}</div>
             <h1 class="post-title">{{ page.title }}</h1>
-            <hr>
-            <div class="post-date"><strong>Time:</strong> {{ page.date | date: "%a %d %b %Y" }}</div>
-            <div class="post-categories"><strong>Categories:</strong>
-                -
-                {% for category  in page.categories %}
-                {{ category }} -
-                {% endfor %}
-            </div>
         </header>
         <hr>
         {{ content }}
