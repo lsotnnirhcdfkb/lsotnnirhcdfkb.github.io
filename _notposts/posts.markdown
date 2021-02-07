@@ -1,5 +1,5 @@
 ---
-title: Posts
+title: Post List
 date: 2021-02-05 20:34:00 -0500
 permalink: /
 ---
