@@ -23,6 +23,7 @@ description: >-
   Things that I think about
 url: ""
 github_username:  lsotnnirhcdfkb
+highlighter: rouge
 
 # Build settings
 markdown: kramdown
