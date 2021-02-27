@@ -2,38 +2,10 @@
 layout: default
 ---
 
-<article>
-    <div class="post-sidebar">
-        <div>
-            [<a href="/" {% if page.title == "Home" %}class="active-page"{% endif %}>Home</a>]
-        </div>
-
-        <div>
-            {% if page.previous %}
-            [<a href="{{page.previous.url}}" class="post-prev-link">prev post ({{page.previous.title}})</a>]
-            {% else %}
-            <p class="post-prev-link">[prev post (none)]</p>
-            {% endif %}
-        </div>
-
-        <div>
-            {% if page.next %}
-            [<a href="{{page.next.url}}" class="post-next-link">next post ({{page.next.title}})</a>]
-            {% else %}
-            <p class="post-next-link">[next post (none)]</p>
-            {% endif %}
-        </div>
-
-        <div>
-            <p>This blog is made with <a href="https://jekyllrb.com/">jekyll</a>!</p>
-        </div>
-    </div>
-
+<article class="clearfix">
     <div class="post-contents">
-        <header>
-            <div class="post-date">{{ page.date | date: "%a %d %b %Y %H:%M:%S %z" }}</div>
-            <h1 class="post-title">{{ page.title }}</h1>
-        </header>
+        <div class="post-date">{{ page.date | date: "%a %d %b %Y %H:%M:%S %z" }}</div>
+        <h1 class="post-title">{{ page.title }}</h1>
         <hr>
         {{ content }}
     </div>

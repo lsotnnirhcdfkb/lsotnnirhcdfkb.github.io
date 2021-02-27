@@ -1,37 +1,91 @@
 ---
 ---
 
-body {
+@import 'reset.css';
+@import 'default.css';
+
+html {
   font-family: monospace;
 }
 
-.post-prev-link, .post-next-link {
-    margin-top: 0;
-    margin-bottom: 0;
+* {
+    box-sizing: border-box;
 }
 
-.post-title {
-    margin-top: 0;
-}
-.post-date {
-    margin-top: 10px;
+body {
+    font-size: 12px;
+    line-height: 1.5;
 }
 
-.centered-things {
+p, li {
+    margin: 1em 0em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.25em;
+}
+h4 {
+    font-size: 1.2em;
+}
+h5 {
+    font-size: 1.1em;
+}
+h6 {
+    font-size: 1em;
+}
+
+hr {
+    background: black;
+    height: 1px;
+    border: none;
+}
+
+ul, ol {
+    margin: 0em 2em;
+}
+ul {
+    list-style: disc inside;
+}
+ol {
+    list-style: decimal inside;
+}
+
+em {
+    font-style: italic;
+}
+strong {
+    font-weight: bold;
+}
+
+.header-left {
+    float: left;
+}
+
+.header-right {
+    float: right;
+}
+
+.page-header {
+    margin: 10px 0px 10px 0px;
+}
+
+.page-content {
     width: 75%;
     margin: auto;
 }
 
-.post-sidebar {
-    width: 25%;
-    float: right;
-    padding: 10px;
-    box-sizing: border-box;
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
-
-.post-contents {
-    width: 75%;
-    float: left;
-}
-
-@import url(default.css)
