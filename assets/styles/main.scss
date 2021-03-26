@@ -60,11 +60,21 @@ ol {
     list-style: decimal inside;
 }
 
-em {
+em, i {
     font-style: italic;
 }
-strong {
+strong, b {
     font-weight: bold;
+}
+
+sup {
+    vertical-align: super;
+    font-size: 0.8em;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: 0.8em;
 }
 
 .header-left {
