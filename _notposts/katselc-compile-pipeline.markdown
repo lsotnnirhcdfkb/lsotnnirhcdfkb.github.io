@@ -39,7 +39,7 @@ If the top of the stack is an indentation-insensitive frame, then all whitespace
 So, the source:
 
 ```
-fun foo(n: uint32)
+fun foo(n: uint32): uint32
     n + 2
 ```
 
@@ -96,18 +96,17 @@ The above AST would be transformed into the following IR:
 
 <sup>(The first register is the return value register, and next few are for the parameters, so in this case '`#0`' is for the return place and '`#1`' is for the first parameter. Also, '`=>:`' indicates a branch instruction or a basic block terminating instruction)</sup>
 ```
-fun foo(n: uint32): uint32 {
-    a: uint32
-    b: uint32
+fun {
+    mut #0: uint32;
+    #1: uint32;
 
     entry(0) {
-        (%0: uint32) = call __intrinsic_add_uint32 b 2;
+        (%0: uint32) = call __intrinsic_add_uint32 #1 2;
         (%1: void) = store a %0;
-        =>: gotobr(exir(1));
+        =>: goto exit(2);
     }
-
     exit(1) {
-        =>: return;
+        =>: ret;
     }
 }
 ```
@@ -127,6 +126,10 @@ At this stage, the IR is transformed into the backend code. As of right now, I'm
 uint32_t _KF2Ns3fooP1T1Bs6uint32(uint32_t n) {
     uint32_t hashreg_0;
     uint32_t hashreg_1;
+
+    hashreg_1 = n;
+
+    goto entry_0;
 
 entry_0:
     uint32_t percentreg_0 = _KF3INTrs1yNs10add_uint32P2T1Bs6uint32T1Bs6uint32(hashreg_1, (uint32_t) 2);
